@@ -1,0 +1,15 @@
+// Media queries manager 
+$breakpoints: (
+  "sm": 36em,  // ~576px
+  "md": 48em,  // ~768px
+  "lg": 62em,  // ~992px
+  "xl": 75em,   // ~1200px
+  "xxl": 90em   // ~1440px
+);
+
+@mixin respond-to($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+

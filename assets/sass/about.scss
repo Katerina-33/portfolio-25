@@ -1,0 +1,115 @@
+.about {
+  padding: 12rem 2rem;
+  background: #f9f9f9;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    h2 {
+      font-size: 4rem;
+      font-weight: 800;
+
+      @include respond-to(md) {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .about-card {
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    background: #fff;
+
+    .about-grid {
+      display: grid;
+      gap: 4rem;
+      grid-template-columns: 1fr;
+
+      @include respond-to(md) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .image-wrapper {
+          position: relative;
+
+          .image-glow {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            filter: blur(60px);
+            opacity: 0.3;
+            border-radius: 2rem;
+          }
+
+          img {
+            position: relative;
+            border-radius: 2rem;
+            max-width: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+          }
+        }
+      }
+
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+
+        h3 {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 1.8rem;
+          color: #666;
+          line-height: 1.6;
+        }
+
+        h4 {
+          font-size: 2rem;
+          font-weight: 600;
+        }
+
+        .about-tools {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+
+          .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.6rem;
+            border-radius: 1rem;
+            border: 2px solid #ccc;
+            background: linear-gradient(to right, #fff, #f3f3f3);
+            transition: all 0.25s ease;
+
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+
+            span {
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

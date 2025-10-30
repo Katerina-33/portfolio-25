@@ -1,0 +1,132 @@
+/* ============================
+   NAVIGATION
+============================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+.nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================
+   LOGO (KR)
+============================ */
+
+.nav__logo {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: $clr-blck;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+
+  &:hover {
+    color: $clr-pink;
+  }
+}
+
+/* ============================
+   DESKTOP MENU
+============================ */
+
+.nav__menu {
+  display: none;
+
+  @include respond-to(md) {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+.nav__link {
+  font-size: 1.6rem;
+  color: $clr-blck;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $clr-pink;
+  }
+}
+
+/* ============================
+   BUTTON (KONTAKT)
+============================ */
+
+.nav__button {
+  background: linear-gradient(90deg, $clr-orange, $clr-pink);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  color: $clr-wht;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* ============================
+   MOBILE TOGGLE
+============================ */
+
+.nav__toggle {
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $clr-blck;
+
+  @include respond-to(md) {
+    display: none;
+  }
+}
+
+/* ============================
+   MOBILE MENU
+============================ */
+
+.nav__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  &.open {
+    display: flex;
+  }
+
+  @include respond-to(md) {
+    display: none !important;
+  }
+}
+
+.nav__mobile .nav__button {
+  text-align: center;
+  font-size: 1.8rem;
+}

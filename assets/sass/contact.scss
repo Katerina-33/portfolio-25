@@ -1,0 +1,90 @@
+.contact-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f9f9f9, #f3f3f3);
+
+  .contact-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include respond-to(md) {
+      max-width: 720px;
+    }
+
+    @include respond-to(lg) {
+      max-width: 960px;
+      padding: 0 30px;
+    }
+
+    @include respond-to(xl) {
+      max-width: 1140px;
+    }
+
+    @include respond-to(xxl) {
+      max-width: 1320px;
+    }
+  }
+
+  .contact-card {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff;
+    padding: 50px 30px;
+    border-radius: 15px;
+    text-align: center;
+
+    .contact-header {
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+
+      .btn {
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &.btn-primary {
+          background: #fff;
+          color: #8b5cf6;
+        }
+
+        &.btn-outline {
+          background: transparent;
+          border: 2px solid #fff;
+          color: #fff;
+        }
+
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .contact-location {
+      margin-top: 20px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  }
+}
+
+// ===== Animace fade-in =====
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
