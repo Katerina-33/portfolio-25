@@ -1,0 +1,115 @@
+#portfolio-page {
+  padding-bottom: 4rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  // HERO
+  .portfolio-hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+
+    @include respond-to(md) {
+      padding: 5rem 0 4rem;
+    }
+
+    .back-button {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #000;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      opacity: 0.6;
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      @include respond-to(md) {
+        font-size: 2.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  // GRID S PROJEKTY
+  .portfolio-list {
+    margin-top: 2rem;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+
+    @include respond-to(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .portfolio-item {
+    background: #fafafa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    h3 {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

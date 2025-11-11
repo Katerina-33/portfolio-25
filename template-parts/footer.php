@@ -11,10 +11,10 @@
       <div class="footer__col">
         <h4 class="footer__subtitle">Rychlé odkazy</h4>
         <ul class="footer__links">
-          <li><a href="#services">Služby</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">O mně</a></li>
-          <li><a href="#contact">Kontakt</a></li>
+          <li><a href="<?php echo site_url('/'); ?>#services">Služby</a></li>
+          <li><a href="<?php echo site_url('/'); ?>#portfolio">Portfolio</a></li>
+          <li><a href="<?php echo site_url('/'); ?>#about">O mně</a></li>
+          <li><a href="<?php echo site_url('/'); ?>#contact">Kontakt</a></li>
         </ul>
       </div>
 
