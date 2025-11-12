@@ -7,10 +7,9 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 2rem 0;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.2rem 0;
+  background-color: $clr-white;
+  box-shadow: 0 2px 12px rgba(15, 15, 15, 0.08);
   z-index: 999;
 }
 
@@ -31,12 +30,13 @@
 .nav__logo {
   font-size: 2.4rem;
   font-weight: 700;
-  color: $clr-blck;
+  color: $clr-dark-green;
   text-decoration: none;
   letter-spacing: -0.5px;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: $clr-pink;
+    color: $clr-green;
   }
 }
 
@@ -56,13 +56,29 @@
 
 .nav__link {
   font-size: 1.6rem;
-  color: $clr-blck;
+  color: $clr-black;
   text-decoration: none;
   padding: 0.5rem 0;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $clr-green;
+    transition: width 0.3s ease;
+  }
 
   &:hover {
-    color: $clr-pink;
+    color: $clr-dark-green;
+
+    &::after {
+      width: 100%;
+    }
   }
 }
 
@@ -71,19 +87,23 @@
 ============================ */
 
 .nav__button {
-  background: linear-gradient(90deg, $clr-orange, $clr-pink);
+  background: $clr-green;
   padding: 1rem 2rem;
   border-radius: 8px;
   color: $clr-wht;
   font-size: 1.6rem;
   font-weight: 600;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
+  display: inline-block;
 
   &:hover {
-    opacity: 0.9;
+    background: $clr-dark-green;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 59, 43, 0.25);
+    color: $clr-wht;
   }
 }
 
@@ -96,7 +116,12 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: $clr-blck;
+  color: $clr-dark-green;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $clr-green;
+  }
 
   @include respond-to(md) {
     display: none;
@@ -113,9 +138,8 @@
   gap: 2rem;
   padding: 2rem;
 
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: $clr-white;
+  box-shadow: 0 8px 20px rgba(15, 15, 15, 0.1);
 
   &.open {
     display: flex;

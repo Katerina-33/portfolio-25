@@ -1,5 +1,6 @@
 #portfolio-page {
   padding-bottom: 4rem;
+  background: $clr-white;
 
   .container {
     max-width: 1200px;
@@ -9,24 +10,26 @@
 
   // HERO
   .portfolio-hero {
-    padding: 4rem 0 3rem;
+    padding: 3rem 0 2.5rem;
     text-align: center;
 
     @include respond-to(md) {
-      padding: 5rem 0 4rem;
+      padding: 4rem 0 3rem;
     }
 
     .back-button {
       font-size: 0.9rem;
       text-decoration: none;
-      color: #000;
+      color: $clr-green;
       display: inline-block;
       margin-bottom: 1.5rem;
-      opacity: 0.6;
-      transition: 0.2s;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      font-weight: 500;
 
       &:hover {
         opacity: 1;
+        transform: translateX(-4px);
       }
     }
 
@@ -34,6 +37,7 @@
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      color: $clr-black;
 
       @include respond-to(md) {
         font-size: 2.8rem;
@@ -41,11 +45,11 @@
     }
 
     p {
-      font-size: 1.1rem;
-      color: #555;
+      font-size: 1.05rem;
+      color: $clr-gray;
       max-width: 680px;
       margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.7;
     }
   }
 
@@ -66,50 +70,25 @@
     @include respond-to(lg) {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    @include respond-to(xl) {
+      gap: 2.5rem;
+    }
   }
 
   .portfolio-item {
-    background: #fafafa;
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    transition: 0.25s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    @include portfolio-item;
 
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    h3 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-
-    p {
-      color: #555;
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-      line-height: 1.5;
+    .portfolio-button {
+      @include portfolio-button;
     }
   }
 
   .portfolio-image {
-    width: 100%;
-    height: 0;
-    padding-bottom: 70%;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 1rem;
+    @include portfolio-image;
+  }
 
-    img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
   }
 }

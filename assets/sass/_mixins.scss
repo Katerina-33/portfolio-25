@@ -13,3 +13,84 @@ $breakpoints: (
   }
 }
 
+// Portfolio item card styles mixin
+@mixin portfolio-item {
+  background: $clr-light-bg;
+  padding: 0;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(13, 59, 43, 0.15);
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 1.5rem 0.5rem;
+    font-weight: 700;
+    color: $clr-black;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $clr-gray;
+    margin: 0.5rem 1.5rem 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+}
+
+// Portfolio image wrapper styles mixin
+@mixin portfolio-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%; // 4:3 ratio
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+// Portfolio button styles mixin
+@mixin portfolio-button {
+  background: $clr-green;
+  color: $clr-white;
+  padding: 12px 24px;
+  margin: 0 1.5rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(26, 107, 76, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    background: $clr-dark-green;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 59, 43, 0.3);
+  }
+}
+
+// Fade in animation mixin
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

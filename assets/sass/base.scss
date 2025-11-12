@@ -15,8 +15,38 @@ body {
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
+  background: $clr-white;
+  color: $clr-black;
 }
 
 main {
   flex: 1;
+}
+
+// Global section styles
+section {
+  transition: background-color 0.3s ease;
+}
+
+// Global button styles
+button,
+.button,
+a.button {
+  font-family: "Montserrat", sans-serif;
+}
+
+// Global heading styles
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: $clr-black;
+}
+
+// Global link styles
+a {
+  color: $clr-green;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $clr-dark-green;
+  }
 }

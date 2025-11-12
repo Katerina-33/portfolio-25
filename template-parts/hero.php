@@ -1,9 +1,9 @@
 <section class="hero">
-    <div class="hero-container">
+    <div class="hero__container">
 
-        <div class="hero-content-wrapper">
+        <div class="hero__content-wrapper">
 
-            <div class="hero-content">
+            <div class="hero__content">
                 <h1>
                     Weby, které <span class="gradient-text">fungují</span>
                 </h1>
@@ -13,9 +13,9 @@
                     Jednoduché, přehledné a přitažlivé řešení pro váš byznys.
                 </p>
 
-                <div class="hero-buttons">
+                <div class="hero__buttons">
                     <button class="button primary" onclick="scrollToContact()">
-                        Získej konzultaci zdarma
+                        Získejte konzultaci zdarma
                     
                     </button>
 

@@ -1,32 +1,39 @@
 .services {
-  padding: 100px 20px;
-  background: #f8f8f8;
+  padding: 6rem 2rem;
+  background: $clr-white;
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .services-header {
+  &__header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
 
     h2 {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 800;
+      color: $clr-black;
+      margin-bottom: 1.5rem;
+
+      @include respond-to(md) {
+        font-size: 3.5rem;
+      }
     }
 
     p {
-      font-size: 2rem;
-      color: #666;
-      max-width: 800px;
-      margin: 1rem auto 0;
+      font-size: 1.1rem;
+      color: $clr-gray;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
   }
 
-  .services-grid {
+  &__grid {
     display: grid;
-    gap: 30px;
+    gap: 2rem;
 
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
@@ -34,55 +41,77 @@
 
     @include respond-to(lg) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
     }
 
-    .service-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 30px 20px;
+    &__card {
+      background: $clr-light-bg;
+      border-radius: 1.2rem;
+      padding: 2.5rem 1.8rem;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 16px rgba(13, 59, 43, 0.06);
+      transition: all 0.3s ease;
+      border: 2px solid $clr-gray-light;
 
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(13, 59, 43, 0.1);
+        border-color: $clr-green;
+        background: $clr-white;
+      }
+
+      &:hover .service-icon {
+        transform: scale(1.05);
       }
 
       .service-icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 20px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
         border-radius: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 2.5rem;
         color: white;
+        transition: all 0.3s ease;
 
         &.code-icon {
-          background: linear-gradient(135deg, #8b5cf6, #ec4899);
-          content: '💻';
+          background: linear-gradient(135deg, $clr-dark-green, $clr-green);
+
+          &::before {
+            content: '💻';
+          }
         }
+
         &.refresh-icon {
-          background: linear-gradient(135deg, #f59e0b, #f97316);
-          content: '♻️';
+          background: linear-gradient(135deg, $clr-green, $clr-light-green);
+
+          &::before {
+            content: '🔧';
+          }
         }
+
         &.trending-icon {
-          background: linear-gradient(135deg, #10b981, #06b6d4);
-          content: '📈';
+          background: linear-gradient(135deg, $clr-light-green, $clr-mint);
+
+          &::before {
+            content: '📊';
+          }
         }
       }
 
       h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
+        color: $clr-black;
       }
 
       p {
-        font-size: 1.6rem;
-        color: #555;
+        font-size: 0.95rem;
+        color: $clr-gray;
+        line-height: 1.6;
       }
     }
   }
